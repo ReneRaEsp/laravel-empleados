@@ -1,3 +1,5 @@
+<h2> {{ $modo === 'Crear' ? "Crear Empleado" : "Editar Empleado" }} </h2>
+
 <label for="Nombre"> Nombre </label>
 <input type="text" name="Nombre" value="{{ isset($empleado) ? $empleado->Nombre : '' }}" id="Nombre" />
 <br>
@@ -18,4 +20,5 @@
 @endif
 <input type="file" name="Foto" value="{{ isset($empleado) ? $empleado->ApellidoMaterno : '' }}" id="Foto" />
 <br>
-<input type="submit" value="Guardar Datos" />
+<input type="submit" value="{{ $modo === "Crear" ? 'Agregar Empleado' : 'Editar Empleado' }}" />
+<a href="/empleado" > Volver sin {{ $modo === "Crear" ? "agregar" : "editar" }} </a>
