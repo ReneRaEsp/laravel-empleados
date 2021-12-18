@@ -1,3 +1,9 @@
+@if(Session::has('mensaje'))
+
+  {{ Session::get('mensaje') }}
+  
+@endif
+
 <table>
     <thead>
         <tr>
@@ -14,13 +20,10 @@
         @foreach ($empleados as $empleado)
             <tr>
                 <td> {{ $empleado->id }} </td>
-                <td> 
-                  <img 
-                  src="{{ asset("storages") . "/" . $empleado->Foto }}"   
-                  alt=""
-                  width="90"
-                  height="90"
-                  />
+                <td>
+                    <img src="{{ asset('storage') . '/' . $empleado->Foto }}"
+                        alt="{{ asset('storage') . '/' . $empleado->Foto }}" width="90" height="90" />
+                    {{ asset('storage') . '/' . $empleado->Foto }}"
                 </td>
                 <td> {{ $empleado->Nombre }} </td>
                 <td> {{ $empleado->ApellidoPaterno }} </td>

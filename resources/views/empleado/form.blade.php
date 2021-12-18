@@ -14,7 +14,7 @@
 <br>
 <label for="Foto"> Foto </label>
 @if (isset($empleado))
-    <img src="{{ asset('storages') . '/' . $empleado->Foto }}" alt="" width="90" height="90" />
+    <img src="{{ asset('storage') . '/' . $empleado->Foto }}" alt="" width="90" height="90" />
 @endif
 <input type="file" name="Foto" value="{{ isset($empleado) ? $empleado->ApellidoMaterno : '' }}" id="Foto" />
 <br>
