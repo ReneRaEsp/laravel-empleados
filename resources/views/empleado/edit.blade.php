@@ -1,7 +1,19 @@
-<form action="{{ url("/empleado/" . $empleado->id) }}" method="post" enctype="multipart/form-data">
-  @csrf
-  {{ method_field('PATCH') }}
+@extends('layouts.app')
 
-  @include('empleado.form', ['modo' => 'Editar'])  
+@section('content')
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <form class="form" action="{{ url('/empleado/' . $empleado->id) }}" method="post"
+                    enctype="multipart/form-data">
+                    @csrf
+                    {{ method_field('PATCH') }}
 
-</form>
+                    @include('empleado.form', ['modo' => 'Editar'])
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+@endsection
